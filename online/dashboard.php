@@ -87,6 +87,7 @@
                                     <th>Payment Date</th>
                                     <th>Amount</th>
                                     <th>Payee Acct Name</th>
+                                    <th>Email</th>
                                     <th>Phone Number</th>
                                     <th>Unique Code</th>
                                     <th>Code Usage</th>
@@ -108,6 +109,7 @@
                                     <td><?php echo $row['payment_date']?></td>
                                     <td><?php echo $row['amount']?></td>
                                     <td><?php echo $row['payee_acct_name']?></td>
+                                    <td><?php echo $row['email']?></td>
                                     <td><?php echo $row['phone_number']?></td>
                                     <td><?php echo $row['unique_code']?></td>
                                     <td><?php echo $row['code_use']?></td>
@@ -135,11 +137,8 @@
             </div>
         </div>
         <div class="footer">
-            <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
-            </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2017
+                <strong>Copyright</strong> Unilag Consult &copy; 2020
             </div>
         </div>
 
