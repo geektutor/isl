@@ -41,7 +41,7 @@
         <div class="row">
 		    <div class="col-md-6 mb-3">
 				<h4>Your Exam venue is: International School, University of lagos Campus, Akoka-Yaba, Lagos</h4>
-				<h4>Class = <?php echo $row['class']; ?> </h4>
+				<h4>Class: <?php echo $row['class']; ?> </h4>
 				<h4>Exam number: <?php echo $row['uid']; ?></h4>
 			</div>
         </div>
@@ -67,10 +67,6 @@
 					<input type="submit" class="btn btn-large btn-primary" name="submit">
 				</div>
 		</form>
-		<div>
-			<br>
-			<h3>Click here <a href="confirm_payment.php">Confirm Payment</a> to get unique code</h3>
-		</div>
 		</div>
 	</main>
 
