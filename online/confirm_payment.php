@@ -32,11 +32,12 @@
 			$date = $_POST['date'];
 			$amount = $_POST['amount'];
 			$p_acct_name = $_POST['p_acct_name'];
+			$email = $_POST['email'];
 			$number = $_POST['number'];
 			$token = generateUniqueId();
 
 
-			$sql = "INSERT INTO payment_evidence(name, screenshot, refcode, bank, payment_date, amount, payee_acct_name, phone_number, unique_code) VALUES('$name', '$pay', '$refcode', '$bank', '$date', '$amount', '$p_acct_name','$number', '$token')";
+			$sql = "INSERT INTO payment_evidence(name, screenshot, refcode, bank, payment_date, amount, payee_acct_name, email, phone_number, unique_code) VALUES('$name', '$pay', '$refcode', '$bank', '$date', '$amount', '$p_acct_name','$number', '$token')";
 			if($conn->query($sql)){
                 $message = "A unique pin will be sent to you in a moment";
             }else{
@@ -108,6 +109,12 @@
 				<label>Payee Acct name</label>
 	          	<div class="input-group">
 					<input type="text" class="form-control" name="p_acct_name" required="">
+	          	</div>
+	        </div>
+	        <div class="mb-3">
+				<label>Email Address</label>
+	          	<div class="input-group">
+					<input type="email" class="form-control" name="email" required="">
 	          	</div>
 	        </div>
 			<div class="mb-3">

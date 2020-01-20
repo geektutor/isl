@@ -41,7 +41,7 @@
         <div class="row">
 		    <div class="col-md-6 mb-3">
 				<h4>Your Exam venue is: International School, University of lagos Campus, Akoka-Yaba, Lagos</h4>
-				<h4>Class: <?php echo $row['class']; ?> </h4>
+				<h4>Class = <?php echo $row['class']; ?> </h4>
 				<h4>Exam number: <?php echo $row['uid']; ?></h4>
 			</div>
         </div>
@@ -60,7 +60,7 @@
 		          <div class="col-md-6 mb-3">
 		          	<?php if($msg !==""){echo "<h2 style='color: red;'>". $msg. "</h2>";} ?>
 					<label>Enter your Exam number</label>
-					<input type="text" class="form-control" name="exam_no" required="">
+					<input type="text" class="form-control" name="exam_no" required="" minlength="4" maxlength="4">
 		          </div>
 		        </div>
 				<div class="student">
