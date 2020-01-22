@@ -103,7 +103,7 @@ $uqname = $_GET['a'];
 	?>
 	
 	<main>
-		<div class="col-lg-12 order-md-1">
+		<div class="col-lg-6 order-md-1">
     	<center>
     		<h2 class="mb-3">APPLICATION FORM</h2>
 	    	<h3>Fill in the form with appropriate information</h3>
