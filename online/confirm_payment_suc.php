@@ -62,7 +62,6 @@
 	<div class="col-lg-12">
 		<center>
     		<h2 class="mb-3">Confirm Payment</h2>
-	    	<h3>Fill in the form with appropriate information.</h3>
 			<?php if($message !== ""){echo "<h3 style='color: green';>".$message."</h3>";} ?>
     	</center>
     </div>
