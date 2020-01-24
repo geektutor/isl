@@ -6,7 +6,7 @@ if(isset($_POST['email'])) {
     $email_from = $_POST['email']; // required
     $telephone = $_POST['subject']; // not required
     $comments = $_POST['message']; // required
-    $email_to = "islentrance@unilagconsult.com.ng";
+    $email_to = "training@unilagconsult.com.ng";
     $email_subject = "Contact Form - ISL Entrance";
 
     function died($error) {

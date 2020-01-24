@@ -27,7 +27,7 @@
 	<div class="col-lg-6 order-md-1">
 		<center><h2>Confirm Payment</h2></center>
 		<br>
-		<form method="POST" action="confirm_payment_suc.php">
+		<form method="POST" action="confirm_payment_suc.php" enctype="multipart/form-data">
 			<div class="mb-3">
 				<label>Student name</label>
 	          	<div class="input-group">
@@ -37,7 +37,7 @@
 	        <div class="mb-3">
 				<label>Screenshot of payment</label>
 	          	<div class="input-group">
-					<input type="file" class="form-control" name="pay" value="" required="">
+                    <input type="file" class="form-control" id="fileToUpload" name="myfile">
 	          	</div>
 	        </div>
 			<div class="mb-3">
@@ -55,7 +55,7 @@
 	        <div class="mb-3">
 				<label>Payment Date</label>
 	          	<div class="input-group">
-					<input type="date" class="form-control" name="date" required="">
+					<input type="date" class="form-control" name="date" max=<? echo date("Y-m-d")?> required="">
 	          	</div>
 	        </div>
 	        <div class="mb-3">
