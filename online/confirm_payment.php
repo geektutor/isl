@@ -1,4 +1,6 @@
-<?php include ('config.php'); ?>
+<?php include ('config.php'); 
+echo $ddd = date('Y-m-d');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,8 +56,8 @@
 	        </div>
 	        <div class="mb-3">
 				<label>Payment Date</label>
-	          	<div class="input-group">
-					<input type="date" class="form-control" name="date" max=<? echo date("Y-m-d")?> required="">
+	          	<div class="input-group dd">
+					<input type="date" class="form-control" name="date" max="<?php echo $ddd; ?>" required="">
 	          	</div>
 	        </div>
 	        <div class="mb-3">
@@ -89,5 +91,25 @@
 			</center>
 		</form>
 	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			$(document).ready(function() {
+				var todaysDate = new Date();
+
+				var year = todaysDate.getFullYear();
+				var month = ("0" + todaysDate.getDate()).slice(-2);
+				var maxDate = (year + " - " + month + " - " + day);
+
+				$('.dd input').attr('max', maxDate);
+			});
+		});
+		function validDAte() {
+			var next = new Date();
+			next = next.setDate(next.getDate() + 1).toISOString().split('T')[0];
+			document.getElementByName('date')[0].setAttribute('max', next);	
+		}
+		
+	</script>
 </body>
 </html>

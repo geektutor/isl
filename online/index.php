@@ -1,4 +1,5 @@
-<?php include ('config.php');
+<?php 
+	include ('config.php'); 
 	if (isset($_POST['submit'])) {
 
 		$unique_id = $_POST['unique'];
@@ -40,7 +41,9 @@
 	<br>
 <center><h3>ISL 2020 ADMISSIONS</h3></center>
 
-
+<?php
+	
+?>
 	<main>
 		<br>
 		<br>

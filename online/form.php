@@ -1,7 +1,28 @@
- <?php 
+ <?php include ('config.php'); ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confirm Payment</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="fonts/fontawesome-4.6.3.min.css">
+  <link rel="stylesheet" type="text/css" href="form-validation.css">
 
-    include ('config.php');
- 
+  <style type="text/css">
+      label{
+        font-size: 20px;
+      }
+      .student input{
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+ <?php
   
     function generateUniqueId(){  
     global $conn;
@@ -20,6 +41,7 @@
 
    if (isset($_POST['submit'])) {
    $name = $_POST['name'];
+    $pay = $_FILE['pay']['name'];
     $refcode = $_POST['refcode'];
     $bank = $_POST['bank'];
     $date = $_POST['date'];
@@ -28,15 +50,10 @@
     $email = $_POST['email'];
     $number = $_POST['number'];
     $token = generateUniqueId();
-    $fileName = $_FILES['myfile']['name'];
+      $fileName = $_FILES['myfile']['name'];
 
-    $query = "SELECT * FROM payment_evidence WHERE refcode = '".$refcode."' ";
-    $result = mysqli_query($conn, $query);
-    $count = mysqli_num_rows($result);
-    if ($count < 1) {
-    
 
-    $sql = "INSERT INTO payment_evidence(name, screenshot, refcode, bank, payment_date, amount, payee_acct_name, email, phone_number, unique_code) VALUES('$name', '$fileName', '$refcode', '$bank', '$date', '$amount', '$p_acct_name', '$email','$number', '$token')";
+    $sql = "INSERT INTO payment_evidence(name, screenshot, refcode, bank, payment_date, amount, payee_acct_name, email, phone_number, unique_code) VALUES('$name', '$pay', '$refcode', '$bank', '$date', '$amount', '$p_acct_name', '$email','$number', '$token')";
     if($conn->query($sql)){
       $currentDir = getcwd();
       $uploadDirectory = "/uploads/";
@@ -83,37 +100,12 @@
     }else{
         die('could not enter data: '. $conn->error);
     }
-    }else{
-      $message = "Payment evidence already exist";
-    }
+
+
 
   }
     
   ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Confirm Payment</title>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="fonts/fontawesome-4.6.3.min.css">
-  <link rel="stylesheet" type="text/css" href="form-validation.css">
-
-  <style type="text/css">
-      label{
-        font-size: 20px;
-      }
-      .student input{
-        font-size: 20px;
-      }
-    </style>
-</head>
-<body>
-
   <div class="col-lg-12">
     <br>
     <center>
