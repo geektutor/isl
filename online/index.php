@@ -1,4 +1,19 @@
-<?php include ('config.php'); ?>
+<?php include ('config.php');
+	if (isset($_POST['submit'])) {
+
+		$unique_id = $_POST['unique'];
+		$sql = "SELECT * FROM payment_evidence WHERE unique_code = '$unique_id' AND code_use = 'unused'";
+		$result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $count = mysqli_num_rows($result);
+
+        if($count == 1) {
+        	header("location:application_form.php?a=$unique_id");
+		}else{
+			echo "<br><center><h3 style='color:red;'>Pin is used</h3></center>";
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,22 +40,7 @@
 	<br>
 <center><h3>ISL 2020 ADMISSIONS</h3></center>
 
-<?php
-	if (isset($_POST['submit'])) {
 
-		$unique_id = $_POST['unique'];
-		$sql = "SELECT * FROM payment_evidence WHERE unique_code = '$unique_id' AND code_use = 'unused'";
-		$result = mysqli_query($conn,$sql);
-        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $count = mysqli_num_rows($result);
-
-        if($count == 1) {
-        	header("location:application_form.php?a=$unique_id");
-		}else{
-			echo "<br><center><h3 style='color:red;'>Pin is used</h3></center>";
-		}
-	}
-?>
 	<main>
 		<br>
 		<br>
