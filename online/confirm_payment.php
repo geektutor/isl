@@ -39,7 +39,7 @@ echo $ddd = date('Y-m-d');
 	        <div class="mb-3">
 				<label>Screenshot of payment</label>
 	          	<div class="input-group">
-                    <input type="file" class="form-control" id="fileToUpload" name="myfile" required>
+                    <input type="file" class="form-control" id="fileToUpload" name="myfile">
 	          	</div>
 	        </div>
 			<div class="mb-3">
