@@ -50,7 +50,8 @@
         $fileSize = $_FILES['myfile']['size'];
         $fileTmpName  = $_FILES['myfile']['tmp_name'];
         $fileType = $_FILES['myfile']['type'];
-        $fileExtension = strtolower(end(explode('.',$fileName)));
+        $tmp = explode('.', $fileName);
+        $fileExtension = end($tmp);
 
         $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
 
