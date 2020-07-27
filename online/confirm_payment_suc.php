@@ -29,6 +29,7 @@
     $number = $_POST['number'];
     $token = generateUniqueId();
     $fileName = $_FILES['myfile']['name'];
+    // var_dump($fileName);
 
     $query = "SELECT * FROM payment_evidence WHERE refcode = '".$refcode."' ";
     $result = mysqli_query($conn, $query);
@@ -38,45 +39,48 @@
 
     $sql = "INSERT INTO payment_evidence(name, screenshot, refcode, bank, payment_date, amount, payee_acct_name, email, phone_number, unique_code) VALUES('$name', '$fileName', '$refcode', '$bank', '$date', '$amount', '$p_acct_name', '$email','$number', '$token')";
     if($conn->query($sql)){
-      $currentDir = getcwd();
-      $uploadDirectory = "/uploads/";
+      if ($fileName !== "") {
+        $currentDir = getcwd();
+        $uploadDirectory = "/uploads/";
 
-      $errors = array(); // Store all foreseen and unforseen errors here
+        $errors = array(); // Store all foreseen and unforseen errors here
 
-      $fileExtensions = array('jpeg','jpg','png'); // Get all the file extensions
+        $fileExtensions = array('jpeg','jpg','png'); // Get all the file extensions
 
-      $fileSize = $_FILES['myfile']['size'];
-      $fileTmpName  = $_FILES['myfile']['tmp_name'];
-      $fileType = $_FILES['myfile']['type'];
-      $fileExtension = strtolower(end(explode('.',$fileName)));
+        $fileSize = $_FILES['myfile']['size'];
+        $fileTmpName  = $_FILES['myfile']['tmp_name'];
+        $fileType = $_FILES['myfile']['type'];
+        $fileExtension = strtolower(end(explode('.',$fileName)));
 
-      $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
+        $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
 
-      // if (isset($_POST['submit'])) {
+        // if (isset($_POST['submit'])) {
 
-          if (!in_array($fileExtension,$fileExtensions)) {
-              $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
-          }
+            if (!in_array($fileExtension,$fileExtensions)) {
+                $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
+            }
 
-          if ($fileSize > 2000000) {
-              $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
-          }
+            if ($fileSize > 2000000) {
+                $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
+            }
 
-          if (empty($errors)) {
-              $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+            if (empty($errors)) {
+                $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
-              if ($didUpload) {
-                  $upload = "true";
-              } else {
-                  echo "An error occurred somewhere. Try again or contact the admin";
-              }
-          } else {
-              foreach ($errors as $error) {
-                  echo $error . "These are the errors" . "\n";
-              }
-          }
-      //}
+                if ($didUpload) {
+                    $upload = "true";
+                } else {
+                    echo "An error occurred somewhere. Try again or contact the admin";
+                }
+            } else {
+                foreach ($errors as $error) {
+                    echo $error . "These are the errors" . "\n";
+                }
+            }
+        //}
 
+      }
+      
 
             $message = "A unique pin will be sent to you in a moment";
         

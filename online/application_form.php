@@ -373,7 +373,6 @@
 				<input type="date" class="form-control" name="attestation_date" placeholder="attestation_date" value="" required="">
 	          </div>
 	        </div>
-	        <!-- <input type="text" name="ss" required=""> -->
 			<center>
 				<div class="student">
 					<input type="submit" class="btn btn-primary" name="submit">
