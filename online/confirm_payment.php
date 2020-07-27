@@ -33,55 +33,55 @@ echo $ddd = date('Y-m-d');
 			<div class="mb-3">
 				<label>Student name</label>
 	          	<div class="input-group">
-					<input type="text" class="form-control" name="name" value="" required="">
+					<input type="text" class="form-control" name="name" value="" required>
 	          	</div>
 	        </div>
 	        <div class="mb-3">
 				<label>Screenshot of payment</label>
 	          	<div class="input-group">
-                    <input type="file" class="form-control" id="fileToUpload" name="myfile">
+                    <input type="file" class="form-control" id="fileToUpload" name="myfile" required>
 	          	</div>
 	        </div>
 			<div class="mb-3">
 				<label>Refcode</label>
 		        <div class="input-group">
-					<textarea class="form-control" name="refcode" required=""></textarea>
+					<textarea class="form-control" name="refcode" required></textarea>
 		        </div>
 	        </div>
 			<div class="mb-3">
 				<label>Bank name</label>
 	          	<div class="input-group">
-					<input type="text" class="form-control" name="bank" required="">
+					<input type="text" class="form-control" name="bank" required>
 	          	</div>
 	        </div>
 	        <div class="mb-3">
 				<label>Payment Date</label>
 	          	<div class="input-group dd">
-					<input type="date" class="form-control" name="date" max="<?php echo $ddd; ?>" required="">
+					<input type="date" class="form-control" name="date" max="<?php echo $ddd; ?>" required>
 	          	</div>
 	        </div>
 	        <div class="mb-3">
 				<label>Amount</label>
 	          	<div class="input-group">
-					<input type="number" class="form-control" name="amount" required="">
+					<input type="number" class="form-control" name="amount" required>
 	          	</div>
 	        </div>
 	        <div class="mb-3">
 				<label>Payee Acct name</label>
 	          	<div class="input-group">
-					<input type="text" class="form-control" name="p_acct_name" required="">
+					<input type="text" class="form-control" name="p_acct_name" required>
 	          	</div>
 	        </div>
 	        <div class="mb-3">
 				<label>Email Address</label>
 	          	<div class="input-group">
-					<input type="email" class="form-control" name="email" required="">
+					<input type="email" class="form-control" name="email" required>
 	          	</div>
 	        </div>
 			<div class="mb-3">
 				<label>Phone Number</label>
 	          	<div class="input-group">
-					<input type="number" class="form-control" name="number" required="">
+					<input type="number" class="form-control" name="number" required>
 	          	</div>
 	        </div>
 			<center>
