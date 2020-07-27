@@ -1,7 +1,8 @@
 <?php
 	session_start();
-include ('config.php');
-$rkey =  $_GET['kdb'];
+	include ('config.php');
+	// $rkey =  $_GET['kdb'];
+	$rkey =  $_SESSION['kdb'];
 ?>
 <!DOCTYPE html>
 <html>

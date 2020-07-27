@@ -7,7 +7,7 @@
 		// generate a 6 digit unique shortcode
 		$tokens = substr(md5(uniqid(rand(), true)),0,6);
 		//check if the shortcode has being assigned to another url...if yes....regenerate another unique code 
-		$query = "SELECT * FROM student_details WHERE keys = '".$tokens."' ";
+		$query = "SELECT * FROM student_details WHERE `keys` = '$tokens'";
 		$result = mysqli_query($conn, $query);
 		$count = mysqli_num_rows($result);
 		if ($count > 0) {
@@ -66,7 +66,9 @@
 		if($conn->query($sql)){
 	 		$q = "UPDATE payment_evidence SET code_use = 'used' WHERE unique_code = '$code'";
 	 		if($conn->query($q)){
-                header("location:success.php?kdb=$rkeys");
+	 			session_start();
+	 			$_SESSION['kdb'] = $rkeys;
+                header("location:success.php");
 	 		}else{
 	 			die('could not enter data: '. $conn->error);
 	 		}
@@ -75,8 +77,6 @@
             die('could not enter data: '. $conn->error);
         }
 	}
-
-
 ?>
 
 <!DOCTYPE html>
