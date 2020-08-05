@@ -22,6 +22,7 @@
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/application_form.css">
 
 </head>
 
@@ -65,6 +66,10 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
+                            <div class="bottons">
+                                <a href="Applicationdashboard.html"><button class="btn btn-primary">Application</button></a>
+                                <a href=""><button class="btn btn-primary">Payment</button></a>
+                            </div>
                             <h5>Payment Details List</h5>
 
                             <div class="ibox-tools">

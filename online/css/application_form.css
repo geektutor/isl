@@ -2,7 +2,54 @@
     display: none;
 }
 
-/* .ade{
-    padding-top: 10px;
-    padding-bottom: 10px;
-} */
+.ibox-title .bottons{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.ibox-title .bottons a{
+    text-decoration: none;
+}
+.ibox-title .bottons a button{
+    /* background-color: greenyellow;
+    color: white; */
+    border: transparent;
+    padding: 7px;
+}
+td a{
+    text-decoration: underline;
+    color: black;
+}
+
+.overall .title{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 900;
+    opacity: 1;
+
+}
+.info{
+    text-align: left;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+}
+
+.sub{
+    text-align: left;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.yfe{
+    width: 100%;
+    height: 350px;
+    margin-bottom: 30px;
+}
+
+@media(max-width:500px){
+    .overall .title{
+        font-size: 20px;
+    }
+}
