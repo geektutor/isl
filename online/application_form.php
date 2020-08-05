@@ -212,7 +212,7 @@
 			</div>
 			
 			<div class="mb-3">
-                <label for="">Upload Passport</label>
+                <label for="">Upload Child's Passport</label>
                 <input type="file" class="form-control" name="full_address" placeholder="full_address" value="" required="" required >
             </div>
 
