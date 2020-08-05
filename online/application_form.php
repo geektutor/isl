@@ -59,7 +59,7 @@
 		$attestation_name = $_POST['attestation_name'];
 		$attestation_date = $_POST['attestation_date'];
 		$code = $_POST['unique'];
-		$rkeys  = keys();
+		$rkeys  = $uqname . substr(md5(uniqid(rand(), true)),0,5);
 
 		$sql = "INSERT INTO student_details(surname, first_name, age, dob, nationality, gender, present_school, last_class, present_class, next_class, address, postal_address, who_will_pay, relationship, full_address, father_name, father_address, father_phone, father_workplace, mother_name, mother_address, mother_phone, mother_workplace, staff_father, staff_father_no, staff_father_fac, staff_father_dept, staff_father_offNum, staff_mother, staff_mother_no, staff_mother_fac, staff_mother_dept, staff_mother_offNum, guardian, guardian_address, guardian_email, guardian_phone, guardian_workplace, relationship_with_g, attestation_name, attestation_date, rkeys) VALUES('$surname', '$firstname', '$age', '$dob', '$nationality', '$gender', '$present_school', '$last_class', '$present_class', '$next_class', '$address', '$postal_address', '$who_will_pay', '$relationship', '$full_address', '$father_name', '$father_address', '$father_phone', '$father_workplace', '$mother_name', '$mother_address', '$mother_phone', '$mother_workplace', '$staff_father', '$staff_father_no', '$staff_father_fac', '$staff_father_dept', '$staff_father_offNum', '$staff_mother', '$staff_mother_no', '$staff_mother_fac', '$staff_mother_dept', '$staff_mother_offNum', '$guardian', '$guardian_address', '$guardian_email', '$guardian_phone', '$guardian_workplace', '$relationship_with_g', '$attestation_name', '$attestation_date', '$rkeys')";
 
@@ -68,7 +68,7 @@
 	 		if($conn->query($q)){
 	 			session_start();
 	 			$_SESSION['kdb'] = $rkeys;
-                header("location:success.php");
+                header("location:success.php?kdb=$rkeys");
 	 		}else{
 	 			die('could not enter data: '. $conn->error);
 	 		}
@@ -123,32 +123,32 @@
 			<div class="row">
 	          <div class="col-md-6 mb-3">
 	            <label for="firstName">Surname</label>
-				<input type="text" class="form-control" name="surname" placeholder="surname" value="" required="">
+				<input type="text" class="form-control" name="surname" placeholder="surname" value="" required>
 	          </div>
 	          <div class="col-md-6 mb-3">
 	            <label for="lastName">First Name</label>
-				<input type="text" class="form-control" name="firstname" placeholder="firstname" value="" required="">
+				<input type="text" class="form-control" name="firstname" placeholder="firstname" value="" required>
 	          </div>
 	        </div>
 	        <div class="row">
 	          <div class="col-md-6 mb-3">
 	          	<label for="Age">Age</label>
-				<input type="number" class="form-control" name="age" placeholder="age" value="" required="">
+				<input type="number" class="form-control" name="age" placeholder="age" value="" required>
 	          </div>
 	          <div class="col-md-6 mb-3">
 	          	<label for="Age">Date of Birth</label>
-	            <input type="date" class="form-control" name="dob" class="form-control" id="pNumber" placeholder="pNumber" required>
+	            <input type="date" class="form-control" name="dob" class="form-control" required>
 	          </div>
 	        </div>
 
 	        <div class="row">
 	          <div class="col-md-6 mb-3">
 	          	<label for="Age">Nationality</label>
-				<input type="text" class="form-control" name="nationality" placeholder="nationality" value="" required="">
+				<input type="text" class="form-control" name="nationality" placeholder="nationality" value="" required>
 	          </div>
 	          <div class="col-md-6 mb-3">
 				<label>Gender</label>
-				<select name="gender" class="custom-select d-block w-100" required="">
+				<select name="gender" class="custom-select d-block w-100" required>
 					<option>Choose gender</option>
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
@@ -159,53 +159,53 @@
 	        <div class="mb-3">
 	          <label for="">Present School</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="present_school" placeholder="present_school" value="">
+				<input type="text" class="form-control" name="present_school" placeholder="present_school" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Last Class</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="last_class" placeholder="last_class" value="">
+				<input type="text" class="form-control" name="last_class" placeholder="last_class" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Present Class</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="present_class" placeholder="present_class" value="">
+				<input type="text" class="form-control" name="present_class" placeholder="present_class" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Next Class</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="next_class" placeholder="next_class" value="">
+				<input type="text" class="form-control" name="next_class" placeholder="next_class" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Address</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="address" placeholder="address" value="" required="">
+				<input type="text" class="form-control" name="address" placeholder="address" value="" required="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Postal Address</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="postal_address" placeholder="postal_address" value="">
+				<input type="text" class="form-control" name="postal_address" placeholder="postal_address" value="" required>
 	          </div>
 	        </div>
 	        <div class="row">
 	          <div class="col-md-6 mb-3">
 	          	<label for="">Who Will Pay</label>
-				<input type="text" class="form-control" name="who_will_pay" placeholder="who_will_pay" value="" required="">
+				<input type="text" class="form-control" name="who_will_pay" placeholder="who_will_pay" value="" required="" required>
 	          </div>
 	          <div class="col-md-6 mb-3">
 	          	<label for="">Relationship</label>
-				<input type="text" class="form-control" name="relationship" placeholder="relationship" value="" required="">
+				<input type="text" class="form-control" name="relationship" placeholder="relationship" value="" required="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Full Address Of Who Will Pay</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="full_address" placeholder="full_address" value="" required="">
+				<input type="text" class="form-control" name="full_address" placeholder="full_address" value="" required="" required>
 	          </div>
 	        </div>
 
@@ -214,49 +214,49 @@
 			<div class="mb-3">
 	          <label for="">Father's Name</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="father_name" placeholder="father_name" value="">
+				<input type="text" class="form-control" name="father_name" placeholder="father_name" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Father's Address</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="father_address" placeholder="father_address" value="">
+				<input type="text" class="form-control" name="father_address" placeholder="father_address" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Father's Phone Number</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="father_phone" placeholder="father_phone" value="">
+				<input type="text" class="form-control" name="father_phone" placeholder="father_phone" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Father's Workplace</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="father_workplace" placeholder="father_workplace" value="">
+				<input type="text" class="form-control" name="father_workplace" placeholder="father_workplace" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Mother's Name</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="mother_name" placeholder="mother_name" value="">
+				<input type="text" class="form-control" name="mother_name" placeholder="mother_name" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Mother's Address</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" class="form-control" name="mother_address" placeholder="mother_address" value="">
+				<input type="text" class="form-control" class="form-control" name="mother_address" placeholder="mother_address" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Mother's Phone number</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" name="mother_phone" placeholder="mother_phone" value="">
+				<input type="text" class="form-control" name="mother_phone" placeholder="mother_phone" value="" required>
 	          </div>
 	        </div>
 	        <div class="mb-3">
 	          <label for="">Mother's Workplace</label>
 	          <div class="input-group">
-				<input type="text" class="form-control" class="form-control" name="mother_workplace" placeholder="mother_workplace" value="">
+				<input type="text" class="form-control" class="form-control" name="mother_workplace" placeholder="mother_workplace" value="" required>
 	          </div>
 	        </div>
 
