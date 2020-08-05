@@ -1,8 +1,8 @@
 <?php
-	session_start();
+// 	session_start();
 	include ('config.php');
-	// $rkey =  $_GET['kdb'];
-	$rkey =  $_SESSION['kdb'];
+	$rkey =  $_GET['kdb'];
+// 	$rkey =  $_SESSION['kdb'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,11 +28,12 @@
 <body>
 	<center><h2>Registration complete</h2></center>
 	<?php
-		$sql = "SELECT * FROM student_details WHERE rkeys ='$rkey'";
+		$sql = "SELECT * FROM student_details WHERE rkeys = '$rkey'";
+
 		$result = mysqli_query($conn,$sql);
         // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
-
+        var_dump($count);
         if($count > 0) {
         	while($row = $result->fetch_assoc()) {
     ?>

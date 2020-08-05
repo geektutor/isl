@@ -77,7 +77,7 @@
                             <input type="text" class="form-control input-sm m-b-xs" id="filter"
                                    placeholder="Search in table">
                          <div class="table-responsive">
-                            <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+                            <table class="footable table table-stripped" data-page-size="20" data-filter=#filter>
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -90,6 +90,7 @@
                                     <th>Phone Number</th>
                                     <th>Unique Code</th>
                                     <th>Code Usage</th>
+                                    <th>Image</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -111,7 +112,21 @@
                                     <td><?php echo $row['phone_number']?></td>
                                     <td><?php echo $row['unique_code']?></td>
                                     <td><?php echo $row['code_use']?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?=$row['id'];?>">
+                                            View Image
+                                        </button>
+                                    </td>
                                 </tr>
+                                <div class="modal inmodal" id="myModal<?=$row['id'];?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content animated bounceInRight">
+                                            <div class="modal-body">
+                                               <img src="uploads/<?=$row['screenshot'];?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                     <?php 
                         }
                         }else{
