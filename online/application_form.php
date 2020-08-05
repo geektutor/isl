@@ -91,7 +91,9 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="fonts/fontawesome-4.6.3.min.css">
 	<link rel="stylesheet" type="text/css" href="form-validation.css">
+	<link rel="stylesheet" href="css/application_form.css">
 	<style type="text/css">
+	
     	label{
     		font-size: 18px;
     	}
@@ -207,7 +209,12 @@
 	          <div class="input-group">
 				<input type="text" class="form-control" name="full_address" placeholder="full_address" value="" required="" required>
 	          </div>
-	        </div>
+			</div>
+			
+			<div class="mb-3">
+                <label for="">Upload Passport</label>
+                <input type="file" class="form-control" name="full_address" placeholder="full_address" value="" required="" required >
+            </div>
 
 	        <hr>
 	        <h4>SECTION B: INFORMATION OF BIOLOGICAL PARENTS</h4>
@@ -261,65 +268,83 @@
 	        </div>
 
 	        <hr>
-	        <h4>Fill this part if Father is a member of staff in University of Lagos</h4>
-	        <div class="mb-3">
-	          <label for="">Father's Name</label>
-	          <div class="input-group">
-				<input type="text" class="form-control" name="staff_father" placeholder="staff_father" value="">
-	          </div>
-	        </div>
+			<div class="mb-3">
+                <label for="">Which of your parent is a staff of the University of Lagos</label>
+                <div class="input-group">
+                    <select name="" id="ade"  class="form-control" class="form-control">
+                        <option value="none">None</option>
+                        <option value="father">Father</option>
+                        <option value="mother">Mother</option>
+                    </select>
+                </div>
+            </div>
+            <div class="father">
 
-	        <div class="row">
-	          <div class="col-md-6 mb-3">
-	            <label>Staff Number</label>
-				<input type="text" class="form-control" name="staff_father_no" placeholder="staff_father_no" value="">
-	          </div>
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Faculty</label>
-				<input type="text" class="form-control" name="staff_father_fac" placeholder="staff_father_fac" value="">
-	          </div>
-	        </div>
+               
+                <div class="mb-3">
+                <label for="">Father's Name</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="staff_father" placeholder="staff_father" value="">
+                </div>
+                </div>
 
-	        <div class="row">
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Department</label>
-				<input type="text" class="form-control" name="staff_father_dept" placeholder="staff_father_dept" value="">
-	          </div>
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Office/Room Number</label>
-				<input type="text" class="form-control" name="staff_father_offNum" placeholder="staff_father_offNum" value="">
-	          </div>
-	        </div>
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Staff Number</label>
+                    <input type="text" class="form-control" name="staff_father_no" placeholder="staff_father_no" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="">Faculty</label>
+                    <input type="text" class="form-control" name="staff_father_fac" placeholder="staff_father_fac" value="">
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="">Department</label>
+                    <input type="text" class="form-control" name="staff_father_dept" placeholder="staff_father_dept" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="">Office/Room Number</label>
+                    <input type="text" class="form-control" name="staff_father_offNum" placeholder="staff_father_offNum" value="">
+                </div>
+                </div>
 	       
-	        <hr>
-	        <h4>Fill this part if Mother is a member of staff in University of Lagos</h4>
-	        <div class="mb-3">
-	          <label for="">Mother's Name</label>
-	          <div class="input-group">
-				<input type="text" class="form-control" name="staff_mother" placeholder="staff_mother" value="">
-	          </div>
-	        </div>
 
-	        <div class="row">
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Staff Number</label>
-				<input type="text" class="form-control" name="staff_mother_no" placeholder="staff_mother_no" value="">
-	          </div>
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Faculty</label>
-				<input type="text" class="form-control" name="staff_mother_fac" placeholder="staff_mother_fac" value="">
-	          </div>
-	        </div>
-	        <div class="row">
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Department</label>
-				<input type="text" class="form-control" name="staff_mother_dept" placeholder="staff_mother_dept" value="">
-	          </div>
-	          <div class="col-md-6 mb-3">
-	          	<label for="">Office/Room Number</label>
-				<input type="text" class="form-control" name="staff_mother_offNum" placeholder="staff_mother_offNum" value="">
-	          </div>
-	        </div>
+            </div>
+	        
+	        <hr>
+            
+            <div class="mother">
+                
+                <div class="mb-3">
+                    <label for="">Mother's Name</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="staff_mother" placeholder="staff_mother" value="">
+                    </div>
+                  </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="">Staff Number</label>
+                      <input type="text" class="form-control" name="staff_mother_no" placeholder="staff_mother_no" value="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Faculty</label>
+                      <input type="text" class="form-control" name="staff_mother_fac" placeholder="staff_mother_fac" value="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="">Department</label>
+                      <input type="text" class="form-control" name="staff_mother_dept" placeholder="staff_mother_dept" value="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Office/Room Number</label>
+                      <input type="text" class="form-control" name="staff_mother_offNum" placeholder="staff_mother_offNum" value="">
+                    </div>
+                  </div>
+            </div>
 	        <hr>
 	        <h4>SECTION C: INFORMATION OF GUARDIAN(IF ANY)</h4>
 			<div class="mb-3">
@@ -386,6 +411,6 @@
 
 <hr>
 
-
+<script src="js/application_form.js"></script>
 </body>
 </html>
