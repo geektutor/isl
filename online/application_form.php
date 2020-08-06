@@ -87,36 +87,38 @@
             $uploadOk = 0;
         }
         if($pass_imageFileType != "jpg" && $pass_imageFileType != "png" && $pass_imageFileType != "jpeg" && $pass_imageFileType != "gif") {
-                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                $error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 $uploadOk = 0;
             }
 
         if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
+            $error = "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
         }else {
             if (move_uploaded_file($_FILES["passport"]["tmp_name"], $pass_target_file)) {
                 $good =1;
+                $sql = "INSERT INTO student_details(surname, first_name, age, dob, nationality, gender, present_school, last_class, present_class, next_class, address, postal_address, who_will_pay, relationship, full_address, father_name, father_address, father_phone, father_workplace, mother_name, mother_address, mother_phone, mother_workplace, staff_father, staff_father_no, staff_father_fac, staff_father_dept, staff_father_offNum, staff_mother, staff_mother_no, staff_mother_fac, staff_mother_dept, staff_mother_offNum, guardian, guardian_address, guardian_email, guardian_phone, guardian_workplace, relationship_with_g, attestation_name, attestation_date, rkeys, passport) VALUES('$surname', '$firstname', '$age', '$dob', '$nationality', '$gender', '$present_school', '$last_class', '$present_class', '$next_class', '$address', '$postal_address', '$who_will_pay', '$relationship', '$full_address', '$father_name', '$father_address', '$father_phone', '$father_workplace', '$mother_name', '$mother_address', '$mother_phone', '$mother_workplace', '$staff_father', '$staff_father_no', '$staff_father_fac', '$staff_father_dept', '$staff_father_offNum', '$staff_mother', '$staff_mother_no', '$staff_mother_fac', '$staff_mother_dept', '$staff_mother_offNum', '$guardian', '$guardian_address', '$guardian_email', '$guardian_phone', '$guardian_workplace', '$relationship_with_g', '$attestation_name', '$attestation_date', '$rkeys', '$pass_newname')";
+
+				if($conn->query($sql)){
+			 		$q = "UPDATE payment_evidence SET code_use = 'used' WHERE unique_code = '$code'";
+			 		if($conn->query($q)){
+			 			session_start();
+			 			$_SESSION['kdb'] = $rkeys;
+		                header("location:success.php?kdb=$rkeys");
+			 		}else{
+			 			die('could not enter data: '. $conn->error);
+			 		}
+
+		        }else{
+		            die('could not enter data: '. $conn->error);
+		        }
+
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                $error = "Sorry, there was an error uploading your file.";
             }
         }
 
-		$sql = "INSERT INTO student_details(surname, first_name, age, dob, nationality, gender, present_school, last_class, present_class, next_class, address, postal_address, who_will_pay, relationship, full_address, father_name, father_address, father_phone, father_workplace, mother_name, mother_address, mother_phone, mother_workplace, staff_father, staff_father_no, staff_father_fac, staff_father_dept, staff_father_offNum, staff_mother, staff_mother_no, staff_mother_fac, staff_mother_dept, staff_mother_offNum, guardian, guardian_address, guardian_email, guardian_phone, guardian_workplace, relationship_with_g, attestation_name, attestation_date, rkeys, passport) VALUES('$surname', '$firstname', '$age', '$dob', '$nationality', '$gender', '$present_school', '$last_class', '$present_class', '$next_class', '$address', '$postal_address', '$who_will_pay', '$relationship', '$full_address', '$father_name', '$father_address', '$father_phone', '$father_workplace', '$mother_name', '$mother_address', '$mother_phone', '$mother_workplace', '$staff_father', '$staff_father_no', '$staff_father_fac', '$staff_father_dept', '$staff_father_offNum', '$staff_mother', '$staff_mother_no', '$staff_mother_fac', '$staff_mother_dept', '$staff_mother_offNum', '$guardian', '$guardian_address', '$guardian_email', '$guardian_phone', '$guardian_workplace', '$relationship_with_g', '$attestation_name', '$attestation_date', '$rkeys', '$pass_newname')";
-
-		if($conn->query($sql)){
-	 		$q = "UPDATE payment_evidence SET code_use = 'used' WHERE unique_code = '$code'";
-	 		if($conn->query($q)){
-	 			session_start();
-	 			$_SESSION['kdb'] = $rkeys;
-                header("location:success.php?kdb=$rkeys");
-	 		}else{
-	 			die('could not enter data: '. $conn->error);
-	 		}
-
-        }else{
-            die('could not enter data: '. $conn->error);
-        }
+		
 	}
 ?>
 
@@ -150,6 +152,9 @@
     	<center>
     		<h2 class="mb-3">APPLICATION FORM</h2>
 	    	<h3>Fill in the form with appropriate information</h3>
+	    	<?php if (isset($error)) :?>
+	    		<h3 style="color: red;"><?=$error;?></h3>
+	    	<?php endif; ?>
     	</center>
 		<form class="needs-validation" method="POST" enctype="multipart/form-data">
 			<div class="mb-3">
