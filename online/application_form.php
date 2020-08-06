@@ -83,7 +83,6 @@
         } 
 
         if ($_FILES["passport"]["size"] > 200000) {
-            echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
         if($pass_imageFileType != "jpg" && $pass_imageFileType != "png" && $pass_imageFileType != "jpeg" && $pass_imageFileType != "gif") {
