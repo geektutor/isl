@@ -4,9 +4,6 @@
 ?>
 <!DOCTYPE html>
 <html>
-
-
-<!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/table_foo_table.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 May 2018 06:05:37 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -154,15 +151,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
-            </div>
-            <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2017
-            </div>
-        </div>
-
+     
         </div>
         </div>
 
@@ -194,7 +183,5 @@
 
 </body>
 
-
-<!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/table_foo_table.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 May 2018 06:05:37 GMT -->
 </html>
 
