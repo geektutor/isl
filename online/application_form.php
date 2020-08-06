@@ -253,7 +253,7 @@
 			</div>
 			
 			<div class="mb-3">
-                <label for="">Upload Child's Passport</label>
+                <label for="">Upload Child's Passport(not more than 2mb)</label>
                 <input type="file" class="form-control" name="passport" id="passport" placeholder="" value="" required="" required >
             </div>
 
