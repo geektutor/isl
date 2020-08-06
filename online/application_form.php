@@ -316,6 +316,7 @@
                         <option value="none">None</option>
                         <option value="father">Father</option>
                         <option value="mother">Mother</option>
+						<option value="Both">Both</option>
                     </select>
                 </div>
             </div>
