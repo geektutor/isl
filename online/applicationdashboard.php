@@ -1,3 +1,7 @@
+<?php
+    require ('config.php');
+    require ('session.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -88,68 +92,27 @@
                                 <tr>
                                     
                                     <th>Name</th>
-                                    <th>Email</th>
+                                    <th>Exam No</th>
                                     <th>Action</th>
                                  
                                 </tr>
                                 </thead>
                                 <tbody>
-                                           
+                                 <?php
+                                    $getList = "SELECT * FROM student_details";
+                                    $result = mysqli_query($conn,$getList);
+                                    $count = mysqli_num_rows($result);
+                                    if($count > 0){
+                                    while($row = $result->fetch_assoc()) {
+                                ?>           
                                 <tr>
                                    
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
+                                    <td><?=$row['surname']?> <?=$row['first_name']?></td>
+                                    <td><?=$row['exam_no']?></td>
+                                    <td><a href="details.php?id=<?=$row['exam_no']?>">Details</a></td>
                                     
                                 </tr>
-                                <tr>
-                                   
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
-                                    
-                                </tr>
-                                
-                                <tr>
-                                   
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
-                                    
-                                </tr>
-                                
-                                <tr>
-                                   
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
-                                    
-                                </tr>
-                                
-                                <tr>
-                                   
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
-                                    
-                                </tr>
-                                
-                                <tr>
-                                   
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
-                                    
-                                </tr>
-                                
-                                <tr>
-                                   
-                                    <td>ade koka</td>
-                                    <td>raji@ggmail.com</td>
-                                    <td><a href="Details.html">Details</a></td>
-                                    
-                                </tr>
-                                
+                                <?php }} ?>
                                 
                                 <div class="modal inmodal" id="myModal<?=$row['id'];?>" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">

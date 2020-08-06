@@ -67,7 +67,7 @@
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <div class="bottons">
-                                <a href="Applicationdashboard.html"><button class="btn btn-primary">Application</button></a>
+                                <a href="applicationdashboard.php"><button class="btn btn-primary">Application</button></a>
                                 <a href=""><button class="btn btn-primary">Payment</button></a>
                             </div>
                             <h5>Payment Details List</h5>
