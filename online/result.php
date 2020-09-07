@@ -69,7 +69,7 @@
 		</form>
 		<div>
 			<br>
-			<h3>Click here <a href="confirm_payment.php">Confirm Payment</a> to get unique code</h3>
+			<h3>Click here <a href="mailto:segunshodunke@unilagconsult.com.ng">to report a problem</a></h3>
 		</div>
 		</div>
 	</main>
