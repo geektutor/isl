@@ -72,6 +72,29 @@
 			<h3>Click here <a href="mailto:segunshodunke@unilagconsult.com.ng">to report a problem</a></h3>
 		</div>
 		</div>
+		<br>
+		<br>
+		IMPORTANT INFORMATION FOR SUCCESSFUL CANDIDATES
+
+All candidates who scored 40% and above, are successful and are, therefore, offered provisional admission. They are to note the following:
+
+They would be issued with Admission letters between Thursday, 10th and Friday, 18th September 2020, between 10.00am and 3.00pm daily.
+
+1.	Bring original copy of hospital birth certificate as indicated below:
+	(Serial No. 1-145) To see Vice-Principal (Administration) 1st Floor
+(Serial No. 146 - 290) To see Vice-Principal (Academics) 1st Floor
+(Serial No. 291 - 436) To see Mrs. O.A. Adebayo (Ground Floor, 2nd room on the right)
+
+Parents who are members of staff of the University of Lagos are to collect ‘Staff Child’s Status Form’ from the Officers above, and take the same to the Human Resources Department, Senate Building for necessary endorsement.
+
+2.	The original copy of the birth certificate will be checked and if confirmed okay, you would be issued with a Remita slip for the payment of ₦10,000 non-refundable Acceptance fee, at any bank.
+
+3.	After the payment of ₦10,000 non-refundable Acceptance fee, candidate should present the bank payment teller together with the Remita receipt obtained from the Bank at the Accounts office (Ground Floor) where you would be issued with a receipt, accordingly.
+
+4.	Take the receipt to the office of the Vice-Principal (Administration) where you would further be attended to.
+
+5.	Pay the requisite school fees on or before Friday, 2nd October, 2020.
+
 	</main>
 
 </body>
